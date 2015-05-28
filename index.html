@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta name="author" content="Youssouf" />
+<meta name="description" content="Jeu snake, snake game, javascript canvas, html" />
+<style>
+    body {
+    font-family: arial;
+}
+
+#snake_game_wrapper {
+    border: 0px solid red;
+    position: relative;
+    display:table;
+}
+
+#game_board {
+    border: 1px solid #000000;
+    display: table-cell;
+    }
+
+#snake_game_info {
+    border: 0px solid blue;
+    display: table-cell;
+    vertical-align: top;
+    list-style-type: none;
+    padding: 5px;
+    color: #00b;
+    font-family: monospace;
+}
+
+#snake_game_text{
+	display:table-cell;
+	vertical-align: top;
+    padding: 10px;
+    border: 1px solid #9eff87;
+    background-color: #c4ffb6;
+    color: #222;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+#snake_game_info li {
+    margin: 3px;
+}
+</style>
+
+<title>Snake</title>
+</head>
+
+
+<body>
+
+<div id="snake_game_wrapper">
+    <canvas id="game_board" width="400" height="400"></canvas>
+    <ul id="snake_game_info">
+        <li><span>Score:</span><span id="snake_game_score">0</span></li>
+        <li><span>Hi Score:</span><span id="snake_game_hi_score">0</span></li>
+        <li><span>Level:</span><span id="snake_game_level">1</span></li>
+        <li><button id="snake_game_reset" title="Start a new game">Reset</button></li>
+        <li><input type="checkbox" id="snake_game_toggle_sound_cb" checked title="Mute sound or play it">Play Sound</li>
+    </ul>
+    <audio id="apple_crunch_audio">
+        <source src="ressources/apple-crunch.mp3" type="audio/mp3">
+        <!-- Source: https://freesound.org/people/Koops/sounds/20280/-->
+    </audio>
+    
+    <audio id="cracking_audio">
+        <source src="ressources/cracking-knuckles.mp3" type="audio/mp3">
+        <!-- source Source: https://freesound.org/ -->
+    </audio>
+    
+    <audio id="coin_audio">
+        <source src="ressources/coin.mp3" type="audio/mp3">
+        <!-- Source: https://freesound.org/ -->
+    </audio>
+    
+    <audio id="background_audio">
+        <source src="ressources/8bit-blix-aka-lost-moons-modded.mp3" type="audio/mp3">
+<!--        Source: https://freesound.org/people/Questiion/sounds/166392/#-->
+    </audio>
+    <div id="snake_game_text">
+        <h3>Snake Game <small>by Youssouf</small></h3>
+        <p>Welcome to my first javascript/HTML5 game.<br>
+        You have to feed <strong>Sam</strong> the snake by directing him toward food.<br>
+        Use the directional keys <br>(Up, Down, Right, Left arrows)<br> to controle <strong>Sam</strong>.<br>
+        <br>
+        <span style="color:#e33535">
+        Avoid touching the surrounding walls or you'll hurt <strong>Sam</strong>.<br>
+        Also don't let <strong>Sam</strong> bite his tail that hurts too.</span>
+        </p>
+</div>
+</div>
+
+
+
+<script type="text/javascript" src="snake.js"></script>
+</body>
+</html>
